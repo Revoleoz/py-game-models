@@ -18,7 +18,7 @@ def main() -> None:
                 name=skill_data["name"],
                 defaults={"bonus": skill_data["bonus"],
                           "race": race})
-        if player["guild"]:
+        if player.get("guild"):
             guild, created = Guild.objects.get_or_create(
                 name=player["guild"]["name"],
                 defaults={"description": player["guild"]["description"]}
